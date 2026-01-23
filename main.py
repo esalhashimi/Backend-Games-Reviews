@@ -6,7 +6,7 @@ app = FastAPI()
 
 # Allow your React dev server(s) to call the API
 origins = [
-    "http://localhost:8000",
+    "http://localhost:3000",
     "http://127.0.0.1:3000",
    
 ]
@@ -21,4 +21,4 @@ app.add_middleware(
 
 @app.get("/")
 def Home():
-    return {"Welcome": "Hello inside Website Page Reviews"}
+    return {"Welcome": "Hello inside Website Page Games Reviews"}
