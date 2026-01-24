@@ -1,5 +1,6 @@
 # main.py
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware 
 from controllers.games import router as GamesRouter
 from controllers.reviews import router as ReviewsRouter
@@ -22,8 +23,9 @@ app.add_middleware(
 )
 
 
-# ROUTES
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
+# ROUTES
 app.include_router(GamesRouter, prefix="/api")
 app.include_router(ReviewsRouter, prefix="/api")
 app.include_router(UserRouter, prefix="/api")

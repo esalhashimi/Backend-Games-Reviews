@@ -13,12 +13,14 @@ class GameSchema(BaseModel):
     rate: float
     is_released: bool
     user: UserSchema
-    comments: List[ReviewSchema] = []
+    reviews: List[ReviewSchema] = []
+
+    class Config:
+        orm_mode = True
 
 class CreateGameSchema(BaseModel):
     name: str
     gender: str
-    image: str
     description: str
     publisher: str
     rate: float
@@ -31,7 +33,6 @@ class CreateGameSchema(BaseModel):
 class UpdateGameSchema(BaseModel):
     name: str
     gender: str
-    image: str
     description: str
     publisher: str
     rate: float
