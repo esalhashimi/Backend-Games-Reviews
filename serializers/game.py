@@ -21,6 +21,7 @@ class GameSchema(BaseModel):
 class CreateGameSchema(BaseModel):
     name: str
     gender: str
+    image: str
     description: str
     publisher: str
     rate: float
@@ -33,6 +34,7 @@ class CreateGameSchema(BaseModel):
 class UpdateGameSchema(BaseModel):
     name: str
     gender: str
+    image: str
     description: str
     publisher: str
     rate: float

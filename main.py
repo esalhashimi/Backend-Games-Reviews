@@ -9,11 +9,7 @@ from controllers.users import router as UserRouter
 app = FastAPI()
 
 # Allow your React dev server(s) to call the API
-origins = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-   
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -23,7 +19,7 @@ app.add_middleware(
 )
 
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 # ROUTES
 app.include_router(GamesRouter, prefix="/api")
