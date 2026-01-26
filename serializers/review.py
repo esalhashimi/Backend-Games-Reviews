@@ -4,6 +4,7 @@ from .user import UserSchema
 class ReviewSchema(BaseModel):
   id: int
   content: str
+  user_id: int
   user: UserSchema
 
   class Config:

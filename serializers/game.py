@@ -4,7 +4,7 @@ from .user import UserSchema
 from .review import ReviewSchema
 
 class GameSchema(BaseModel):
-    id: Optional[int] = True
+    id: int
     name: str
     gender: str
     image: str
@@ -12,6 +12,7 @@ class GameSchema(BaseModel):
     publisher: str
     rate: float
     is_released: bool
+    user_id: int
     user: UserSchema
     reviews: List[ReviewSchema] = []
 
