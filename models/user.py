@@ -11,7 +11,7 @@ from config.environment import secret
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 class UserModel(BaseModel):
 
-  __tablename__ = "users"
+  __tablename__ = "user"
 
   id = Column(Integer, primary_key=True, index=True)
 

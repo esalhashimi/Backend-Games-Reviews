@@ -14,5 +14,5 @@ class ReviewModel(BaseModel):
     game_id = Column(Integer, ForeignKey("Game.id", ondelete="CASCADE"), nullable=False)
     game = relationship("GameModel", back_populates = "reviews", passive_deletes=True)
 
-    user_id = Column(Integer, ForeignKey('users.id',  ondelete="CASCADE"), nullable=False)
+    user_id = Column(Integer, ForeignKey('user.id',  ondelete="CASCADE"), nullable=False)
     user = relationship('UserModel', back_populates='reviews')
