@@ -6,7 +6,7 @@ from sqlalchemy.orm import relationship
 class GameModel(BaseModel):
 
     # TABLE in Postgresql
-    __tablename__ = "Games"
+    __tablename__ = "Game"
 
     id = Column(Integer, primary_key=True, index=True)
 
