@@ -6,6 +6,7 @@ from database import get_db
 
 router = APIRouter()
 
+# Create User
 @router.post("/register", response_model=UserTokenSchema) 
 def create_user(user: UserRegistrationSchema, db: Session = Depends(get_db)):
     
@@ -31,6 +32,8 @@ def create_user(user: UserRegistrationSchema, db: Session = Depends(get_db)):
         "message": "User created and logged in successfully"
     }
 
+
+# Login the user
 @router.post("/login", response_model=UserTokenSchema)
 def login(user: UserLoginSchema, db: Session = Depends(get_db)):
     db_user = db.query(UserModel).filter(UserModel.username == user.username).first()

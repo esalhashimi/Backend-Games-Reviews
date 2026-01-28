@@ -4,9 +4,14 @@ from sqlalchemy.orm import relationship
 
 
 class ReviewModel(BaseModel):
+
+      # TABLE in Postgresql
     __tablename__ = "Review"
 
+
     id = Column(Integer, primary_key=True, index=True)
+
+    # Specific columns for our Review Table.
     content = Column(String, nullable=False)
 
 

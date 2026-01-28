@@ -3,6 +3,8 @@ from typing import Optional, List
 from .user import UserSchema
 from .review import ReviewSchema
 
+
+# start run 
 class GameSchema(BaseModel):
     id: int
     name: str
@@ -19,6 +21,7 @@ class GameSchema(BaseModel):
     class Config:
         orm_mode = True
 
+# After Create Game
 class CreateGameSchema(BaseModel):
     name: str
     gender: str
@@ -32,6 +35,7 @@ class CreateGameSchema(BaseModel):
         orm_mode = True
 
 
+# After Edit the game
 class UpdateGameSchema(BaseModel):
     name: str
     gender: str

@@ -1,6 +1,8 @@
 from pydantic import BaseModel
 from .user import UserSchema
 
+
+# Start run
 class ReviewSchema(BaseModel):
   id: int
   content: str
@@ -10,12 +12,16 @@ class ReviewSchema(BaseModel):
   class Config:
     orm_mode = True
 
+
+# After Create Review
 class ReviewCreateSchema(BaseModel):
   content: str
 
   class Config:
     orm_mode = True
 
+
+# After Edit the Review
 class ReviewUpdateSchema(BaseModel):
   content: str
 
